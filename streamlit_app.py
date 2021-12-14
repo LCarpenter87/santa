@@ -46,6 +46,6 @@ if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=N
     new_data = np.array(new_data).reshape(1, -1)
     result = logreg.predict_proba(new_data)
     result = round(result[0][0], 0)       
-    st.text(f' Your chance of getting a gift: {result[0][0]}%')
+    st.text(f' Your chance of getting a gift: {result}%')
     st.text(new_data)
 
