@@ -18,6 +18,7 @@ answers['hugs'] = st.radio('How many times did you hug your parents?',secondary)
 answers['sharing'] = st.radio('How many times did you share?',secondary)
 answers['chores'] = st.radio('How much do your guardians have to nag to get you to do your chores?',chores)
 answers['nice'] = st.radio('How often did you do something nice for your parents, without being asked?',secondary)
+answers['swearing'] = st.slider('How many times did you swear in 2021?', min=0, max=1000)
 
 
 if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=None):
