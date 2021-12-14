@@ -20,12 +20,14 @@ st.title('Will you get a present from Santa?')
 
 answers = dict()
 
-answers['pleaseandthanks'] = st.radio('How often did you say Please and Thank you?',options['time_options'])
-answers['disobey'] = st.radio('How often did you disobey your parents?',options['secondary'])
+answers['pleaseandthanks'] = st.radio('How often did you say Please and Thank you?',options[types['pleaseandthanks']])
+answers['disobey'] = st.radio('How often did you disobey your parents?',options[types['disobey']])
 answers['hugs'] = st.radio('How many times did you hug your parents?',options['secondary'])
 answers['sharing'] = st.radio('How many times did you share?',options['secondary'])
 answers['chores'] = st.radio('How much do your guardians have to nag to get you to do your chores?',options['chores'])
 answers['nice'] = st.radio('How often did you do something nice for your parents, without being asked?',options['secondary'])
+
+
 answers['swearing'] = st.slider('How many times did you swear in 2021?', min_value=0, max_value=1000)
 
 logreg = pickle.load(open('santa.sav', 'rb'))
