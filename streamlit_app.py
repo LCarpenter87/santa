@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 import numpy as np
 import pickle
+from sklearn.linear_model import LogisticRegression
+from sklearn.preprocessing import MinMaxScaler
 
 
 time_options = 'Every Time,Most of the time,Rarely,Never'.split(',')
