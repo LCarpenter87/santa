@@ -5,7 +5,8 @@ import pickle
 from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import MinMaxScaler
 
-st.title('Will you get a present from Santa?')
+st.title('Will you get a present from Father Christmas?')
+st.text('How good have you been this year?')
 
 options = {'time_options' :'Every Time,Most of the time,Rarely,Never'.split(','),
            'secondary' : 'Never,Just a few times,Occassionally,Often,All the time'.split(','),
