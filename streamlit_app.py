@@ -35,7 +35,7 @@ if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=N
 
     for k,v in types.items():
         new_list = list('0'*len(options[types[k][0]]))    
-        new_list[options[v].index(answers[k][0])] = '1'
+        new_list[options[v[0]].index(answers[k][0])] = '1'
         new_data = new_data + new_list
 
     new_data = [int(x) for x in new_data]
