@@ -21,5 +21,5 @@ answers['nice'] = st.radio('How often did you do something nice for your parents
 
 
 if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=None):
-  for x,i in answers.items()
+  for x,i in answers.items():
   st.text(f'{x} : {i}')
