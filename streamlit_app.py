@@ -23,7 +23,7 @@ answers = dict()
 for k,v in types.items():
     answers[k] = st.radio(v[1], options[types[k][0]])
 
-## Take in the Text Input
+## Take in the Number Input
 answers['swearing'] = st.slider('How many times did you swear in 2021?', min_value=0, max_value=1000)
 
 ## Bring in the Pickle Files
@@ -34,7 +34,7 @@ if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=N
     new_data = []
 
     for k,v in types.items():
-        new_list = list('0'*len(options[types[k]]))    
+        new_list = list('0'*len(options[types[k][0]]))    
         new_list[options[v].index(answers[k])] = '1'
         new_data = new_data + new_list
 
