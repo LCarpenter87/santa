@@ -14,8 +14,8 @@ options = {'time_options' :'Every Time,Most of the time,Rarely,Never'.split(',')
 types = {'pleaseandthanks': ('time_options', 'How often did you say Please and Thank you?'),
          'disobey': ('time_options', 'How often did you disobey your parents?'),
          'hugs': ('secondary', 'How many times did you hug your parents?'),
-         'sharing': ('secondary', 'How many times did you share?'),
-         'chores': ('chores','How much do your guardians have to nag to get you to do your chores?'),
+         'sharing': ('secondary', 'How many times did you share your toys with friends or siblings when asked?'),
+         'chores': ('chores','How much do your guardians have to remind you about doing your chores?'),
          'nice': ('secondary', 'How often did you do something nice for your parents, without being asked?')}
 
 answers = dict()
