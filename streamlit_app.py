@@ -1,6 +1,7 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
+import pickle
 
 
 time_options = 'Every Time,Most of the time,Rarely,Never'.split(',')
@@ -20,6 +21,7 @@ answers['chores'] = st.radio('How much do your guardians have to nag to get you 
 answers['nice'] = st.radio('How often did you do something nice for your parents, without being asked?',secondary)
 answers['swearing'] = st.slider('How many times did you swear in 2021?', min_value=0, max_value=1000)
 
+load_model = pickle.load(open('santa.sav', 'rb'))
 
 if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=None):
   for x,i in answers.items():
