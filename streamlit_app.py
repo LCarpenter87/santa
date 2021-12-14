@@ -10,7 +10,7 @@ options = {'time_options' :'Every Time,Most of the time,Rarely,Never'.split(',')
            'chores' : 'I do it first time,They just ask me a couple of times,They have to remind me a lot,I never do my chores'.split(',')}
 
 types = {'pleaseandthanks':'time_options',
-         'disobey':'secondary',
+         'disobey':'time_options',
          'hugs':'secondary',
          'sharing':'secondary',
          'chores': 'chores',
