@@ -21,7 +21,7 @@ types = {'pleaseandthanks': ('time_options', 'How often did you say Please and T
 answers = dict()
 
 for k,v in types.items():
-    answers[k] = st.radio(v[1], options[types[v][0]])
+    answers[k] = st.radio(v[1], options[types[k][0]])
 
 ## Take in the Text Input
 answers['swearing'] = st.slider('How many times did you swear in 2021?', min_value=0, max_value=1000)
