@@ -23,8 +23,12 @@ answers['chores'] = st.radio('How much do your guardians have to nag to get you 
 answers['nice'] = st.radio('How often did you do something nice for your parents, without being asked?',secondary)
 answers['swearing'] = st.slider('How many times did you swear in 2021?', min_value=0, max_value=1000)
 
-load_model = pickle.load(open('santa.sav', 'rb'))
+logreg = pickle.load(open('santa.sav', 'rb'))
+scaler = pickle.load(open('scaler.sav', 'rb'))
+
+new_data = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 
 if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=None):
-  for x,i in answers.items():
-    st.text(f'{x} : {i}')
+  new_data = np.array(new_data).reshape(1, -1)
+  result = logreg.predict_proba(new_data) 
+  st.text(result)
