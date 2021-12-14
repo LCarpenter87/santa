@@ -43,7 +43,7 @@ if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=N
     new_dict = {'swearing':[answers['swearing']]}
     new_df = pd.DataFrame(new_dict)
     new_df = scaler.transform(new_df)
-    new_data = new_data + list(new_value[0])
+    new_data = new_data + list(new_df[0])
     new_data = np.array(new_data).reshape(1, -1)
     result = logreg.predict_proba(new_data) 
     st.text(result)
