@@ -9,6 +9,13 @@ options = {'time_options' :'Every Time,Most of the time,Rarely,Never'.split(',')
            'secondary' : 'Never,Just a few times,Occassionally,Often,All the time'.split(','),
            'chores' : 'I do it first time,They just ask me a couple of times,They have to remind me a lot,I never do my chores'.split(',')}
 
+types = {'pleaseandthanks':'time_options',
+         'disobey':'secondary',
+         'hugs':'secondary',
+         'sharing':'secondary',
+         'chores': 'chores',
+         'nice':'secondary'}
+
 st.title('Will you get a present from Santa?')
 
 answers = dict()
@@ -25,12 +32,15 @@ logreg = pickle.load(open('santa.sav', 'rb'))
 scaler = pickle.load(open('scaler.sav', 'rb'))
 
 if st.button("Let's go", key=None, help=None, on_click=None, args=None, kwargs=None):
-  please = list('0'*len(time_options))
-  please[time_options.index(answers['pleaseandthanks'])] = '1'
-  disobey = list('0'*len(secondary))
-  disobey[secondary.index(answers['disobey'])] = '1'
+    new_data = []
+
+    for k,v in types.items():
+        new_list = list('0'*len(options[types[k]]))    
+        new_list[options[v].index(answers[k])] = '1'
+        new_data = new_data + new_list
+
+    new_data = [int(x) for x in new_data]
   
-  new_data = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-  new_data = np.array(new_data).reshape(1, -1)
-  result = logreg.predict_proba(new_data) 
-  st.text(result)
+    new_data = np.array(new_data).reshape(1, -1)
+    #result = logreg.predict_proba(new_data) 
+    st.text(new_data)
